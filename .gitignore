@@ -24,3 +24,8 @@ prime_opt-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+
+# VSCode files
+
+.vscode/
