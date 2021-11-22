@@ -38,7 +38,7 @@ defmodule PrimeOpt.MixProject do
   def package() do
     [
       name: "PrimeOpt",
-      files: ~w("lib", "mix.exs", "README.md", "LICENSE"),
+      files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["José Juan García Rojas"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/Dante7/prime_opt"}
