@@ -42,7 +42,7 @@ defmodule PrimeOpt do
   ## Examples
 
       iex> PrimeOpt.get_chunk_size(1_000)
-      10
+      32
   """
   def get_chunk_size(input) do
     :math.sqrt(input) 
@@ -56,7 +56,7 @@ defmodule PrimeOpt do
   ## Examples
 
       iex> PrimeOpt.get_non_multiples([2..100], [2,3,5,7,11])
-      [11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+      [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
   """
   def get_non_multiples(numbers, primes) do
     for l <- numbers do
