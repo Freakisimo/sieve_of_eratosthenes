@@ -1,4 +1,4 @@
-defmodule PrimeOpt.MixProject do
+defmodule sieve_of_eratosthenes.MixProject do
   use Mix.Project
 
   def project do
@@ -10,7 +10,7 @@ defmodule PrimeOpt.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      name: "PrimeOpt",
+      name: "sieve_of_eratosthenes",
       source_url: "https://github.com/Dante7/prime_opt"
     ]
   end
@@ -37,7 +37,7 @@ defmodule PrimeOpt.MixProject do
 
   def package() do
     [
-      name: "PrimeOpt",
+      name: "sieve_of_eratosthenes",
       files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["José Juan García Rojas"],
       licenses: ["MIT"],

@@ -1,4 +1,4 @@
-# PrimeOpt
+# sieve_of_eratosthenes
 
 Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers until number given used as limit, using tail recursive optimization and async functions.
 
@@ -23,9 +23,9 @@ end
 ```
 
 ## Usage
-For calculate all the primes with a limit given you can call the module `PrimeOpt.calculate_primes/1` like this.
+For calculate all the primes with a limit given you can call the module `sieve_of_eratosthenes.calculate_primes/1` like this.
 ```elixir
-iex> PrimeOpt.calculate_primes(1_000)
+iex> sieve_of_eratosthenes.calculate_primes(1_000)
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73,
  79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
  163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, ...]

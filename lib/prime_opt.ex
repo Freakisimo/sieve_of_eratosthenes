@@ -1,6 +1,6 @@
-defmodule PrimeOpt do
+defmodule sieve_of_eratosthenes do
   @moduledoc """
-  Documentation for `PrimeOpt`.
+  Documentation for `sieve_of_eratosthenes`.
     Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers 
     until number given used as limit, using tail recursive optimization and async functions
   """
@@ -26,7 +26,7 @@ defmodule PrimeOpt do
 
   ## Examples
 
-      iex> PrimeOpt.get_chunked_list(10, 2)
+      iex> sieve_of_eratosthenes.get_chunked_list(10, 2)
       [[2, 3], [4, 5], [6, 7], [8, 9], [10]]
   """
   def get_chunked_list(input, chunk_size) do
@@ -41,7 +41,7 @@ defmodule PrimeOpt do
 
   ## Examples
 
-      iex> PrimeOpt.get_chunk_size(1_000)
+      iex> sieve_of_eratosthenes.get_chunk_size(1_000)
       32
   """
   def get_chunk_size(input) do
@@ -55,7 +55,7 @@ defmodule PrimeOpt do
 
   ## Examples
 
-      iex> PrimeOpt.get_non_multiples([2..100], [2,3,5,7,11])
+      iex> sieve_of_eratosthenes.get_non_multiples([2..100], [2,3,5,7,11])
       [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
   """
   def get_non_multiples(numbers, primes) do
@@ -72,7 +72,7 @@ defmodule PrimeOpt do
 
   ## Examples
 
-      iex> PrimeOpt.recursive_primes([2,3,4,5,6,7,8,9,10], [])
+      iex> sieve_of_eratosthenes.recursive_primes([2,3,4,5,6,7,8,9,10], [])
       [2, 3, 5, 7]
   """
   def recursive_primes([head | tail], primes) do
@@ -87,7 +87,7 @@ defmodule PrimeOpt do
   ## Examples
 
       iex> l = 10..100 |> Enum.to_list
-      iex> PrimeOpt.remove_multiples([2,3,5,7,11], l)
+      iex> sieve_of_eratosthenes.remove_multiples([2,3,5,7,11], l)
       [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
   """
   def remove_multiples([head | tail], number_list) do
