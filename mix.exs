@@ -3,7 +3,7 @@ defmodule sieve_of_eratosthenes.MixProject do
 
   def project do
     [
-      app: :prime_opt,
+      app: :sieve_of_eratosthenes,
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
@@ -11,7 +11,7 @@ defmodule sieve_of_eratosthenes.MixProject do
       package: package(),
       deps: deps(),
       name: "sieve_of_eratosthenes",
-      source_url: "https://github.com/Dante7/prime_opt"
+      source_url: "https://github.com/Dante7/sieve_of_eratosthenes"
     ]
   end
 
@@ -41,7 +41,7 @@ defmodule sieve_of_eratosthenes.MixProject do
       files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["José Juan García Rojas"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/Dante7/prime_opt"}
+      links: %{"GitHub" => "https://github.com/Dante7/sieve_of_eratosthenes"}
     ]
   end
 
