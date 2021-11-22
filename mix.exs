@@ -7,7 +7,11 @@ defmodule PrimeOpt.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: description(),
+      package: package(),
+      deps: deps(),
+      name: "PrimeOpt",
+      source_url: "https://github.com/Dante7/prime_opt"
     ]
   end
 
@@ -26,4 +30,19 @@ defmodule PrimeOpt.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
+
+  def description() do
+    "Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers until number given used as limit, using tail recursive optimization and async functions."
+  end
+
+  def package() do
+    [
+      name: "PrimeOpt",
+      files: ~w("lib", "mix.exs", "README.md", "LICENSE"),
+      maintainers: ["José Juan García Rojas"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/Dante7/prime_opt"}
+    ]
+  end
+
 end
