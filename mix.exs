@@ -1,4 +1,4 @@
-defmodule sieve_of_eratosthenes.MixProject do
+defmodule SieveOfEratosthenes.MixProject do
   use Mix.Project
 
   def project do
