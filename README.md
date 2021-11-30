@@ -17,7 +17,7 @@ by adding `prime_opt` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:prime_opt, "~> 0.1.0"}
+    {:sieve_of_eratosthenes, "~> 0.1.0"}
   ]
 end
 ```
@@ -25,14 +25,27 @@ end
 ## Usage
 For calculate all the primes with a limit given you can call the module `SieveOfEratosthenes.calculate_primes/1` like this.
 ```elixir
-iex> sieve_of_eratosthenes.calculate_primes(1_000)
+iex> SieveOfEratosthenes.calculate_primes(1_000)
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73,
  79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
  163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, ...]
 ```
+## Benchmark
+The benchmark was generated with Benchee shown the following results:
+| quantity | time elapsed |
+|--- | --- |
+| One thousand | 0.20 ms |
+| Ten thousand | 1.48 ms |
+| One hundred thousand | 12.64 ms |
+| One million | 148.52 ms |
+| Ten million | 2261.63 ms |
+
+![chart](benchmarks/chart.png)
+
+To run the benchmarks again, just run `mix run benchmarks/calculate_primes.ex` and see the results on `benchmarks/results/index.html`
 
 ## Maintainer
-This proyect was develop by [José Juan García](https://github.com/Dante7) in my track to become a elixir developer
+This proyect was developed by [José Juan García](https://github.com/Dante7) in my track to become a elixir developer
 
 ## Contributing
 Feel free to recommend any change in favor of improving this project

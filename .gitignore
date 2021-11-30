@@ -27,5 +27,7 @@ prime_opt-*.tar
 
 
 # VSCode files
-
 .vscode/
+
+# Benchmark html files
+/benchmarks/results/
