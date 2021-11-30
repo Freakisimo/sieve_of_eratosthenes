@@ -4,7 +4,7 @@ defmodule SieveOfEratosthenes.MixProject do
   def project do
     [
       app: :sieve_of_eratosthenes,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -34,7 +34,7 @@ defmodule SieveOfEratosthenes.MixProject do
   end
 
   def description() do
-    "Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers until number given used as limit, using tail recursive optimization and async functions."
+    "Implementation of sieve of eratosthenes to calculate all the prime numbers, using tail recursive optimization and async functions."
   end
 
   def package() do
