@@ -11,14 +11,31 @@ defmodule SieveOfEratosthenes do
   def calculate_primes(input) do
     chunk_size = get_chunk_size(input)
 
+    primes = recursive_calculation([], 2, 10, chunk_size)
+
     chunked_list = get_chunked_list(input, chunk_size)
 
-    primes = recursive_primes(hd(chunked_list) , [])
+    # primes = recursive_primes(hd(chunked_list) , [])
 
     another_primes = get_non_multiples(tl(chunked_list), primes)
 
     primes ++ another_primes
   end
+
+  def recursive_calculation(primes, start, items, max_size) when max_size != items do
+    l =
+    start..items
+    |> Enum.to_list
+    p = recursive_primes(primes ++ l, [])
+    new_items =
+      case max_size < items * items do
+        true -> max_size
+        false -> items * items
+      end
+    recursive_calculation(p, items+1, new_items, max_size)
+  end
+
+  def recursive_calculation(primes, _, items, max_size) when max_size == items, do: primes
 
   @doc """
     Generate a list between two and `input` number
