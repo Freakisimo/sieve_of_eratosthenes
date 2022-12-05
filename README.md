@@ -45,7 +45,7 @@ The benchmark was generated with Benchee shown the following results:
 To run the benchmarks again, just run `mix run benchmarks/calculate_primes.ex` and see the results on `benchmarks/results/index.html`
 
 ## Maintainer
-This proyect was developed by [José Juan García](https://github.com/Dante7) in my track to become a elixir developer
+This proyect was developed by [José Juan García](https://github.com/Freakisimo) in my track to become a elixir developer
 
 ## Contributing
 Feel free to recommend any change in favor of improving this project
