@@ -13,9 +13,13 @@ defmodule SieveOfEratosthenes do
 
     chunked_list = get_chunked_list(input, chunk_size)
 
-    primes = recursive_primes(hd(chunked_list) , [])
+    head = Stream.take(chunked_list, 1) 
+        |> Enum.to_list 
+        |> Enum.at(0)
 
-    another_primes = get_non_multiples(tl(chunked_list), primes)
+    primes = recursive_primes(head, [])
+
+    another_primes = get_non_multiples(chunked_list, primes)
 
     primes ++ another_primes
   end
@@ -30,9 +34,11 @@ defmodule SieveOfEratosthenes do
       [[2, 3], [4, 5], [6, 7], [8, 9], [10]]
   """
   def get_chunked_list(input, chunk_size) do
-    2..input
-    |> Enum.to_list
-    |> Enum.chunk_every(chunk_size)
+    Stream.unfold(2, fn
+      current when current <= input -> {current, current + 1}
+      _ -> nil
+    end)
+    |> Stream.chunk_every(chunk_size)
   end
 
   @doc """
@@ -60,7 +66,7 @@ defmodule SieveOfEratosthenes do
   """
   def get_non_multiples(numbers, primes) do
     for l <- numbers do
-      Task.async(fn -> remove_multiples(primes, l) end)
+      Task.async(fn -> remove_multiples(primes, l |> Enum.to_list) end)
     end
     |> Task.yield_many(100_000)
     |> Enum.map(fn {t, res} -> elem(res, 1) || Task.shutdown(t, :brutal_kill) end)
