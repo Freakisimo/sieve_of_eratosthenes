@@ -4,7 +4,7 @@ defmodule SieveOfEratosthenes.MixProject do
   def project do
     [
       app: :sieve_of_eratosthenes,
-      version: "0.1.1",
+      version: "0.2.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -40,10 +40,10 @@ defmodule SieveOfEratosthenes.MixProject do
   def package() do
     [
       name: "sieve_of_eratosthenes",
-      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      files: ["lib", "mix.exs", "README.md", "LICENSE", "CHANGELOG.md"],
       maintainers: ["José Juan García Rojas"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/Dante7/sieve_of_eratosthenes"}
+      links: %{"GitHub" => "https://github.com/Freakisimo/sieve_of_eratosthenes"}
     ]
   end
 

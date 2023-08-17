@@ -30,17 +30,18 @@ iex> SieveOfEratosthenes.calculate_primes(1_000)
  79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
  163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, ...]
 ```
-## Benchmark
-The benchmark was generated with Benchee shown the following results:
-| quantity | time elapsed |
-|--- | --- |
-| One thousand | 0.20 ms |
-| Ten thousand | 1.48 ms |
-| One hundred thousand | 12.64 ms |
-| One million | 148.52 ms |
-| Ten million | 2261.63 ms |
 
-![chart](benchmarks/chart.png)
+## Benchmark for v0.2.0
+The benchmark was generated with Benchee shown the following results:
+![table](benchmarks/0.2.0/table.png)
+
+![chart](benchmarks/0.2.0/chart.png)
+
+## Benchmark for v0.1.1
+The benchmark was generated with Benchee shown the following results:
+![table](benchmarks/0.1.1/table.png)
+
+![chart](benchmarks/0.1.1/chart.png)
 
 To run the benchmarks again, just run `mix run benchmarks/calculate_primes.ex` and see the results on `benchmarks/results/index.html`
 
