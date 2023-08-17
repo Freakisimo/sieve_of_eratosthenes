@@ -30,7 +30,7 @@ defmodule SieveOfEratosthenes do
 
   ## Examples
 
-      iex> SieveOfEratosthenes.get_chunked_list(10, 2)
+      iex> SieveOfEratosthenes.get_chunked_list(10, 2) |> Enum.to_list
       [[2, 3], [4, 5], [6, 7], [8, 9], [10]]
   """
   def get_chunked_list(input, chunk_size) do
