@@ -15,7 +15,7 @@ defmodule SieveOfEratosthenesTest do
   end
 
   test "Return chunk list" do
-    assert SieveOfEratosthenes.get_chunked_list(10, 3) == [[2,3,4],[5,6,7],[8,9,10]]
+    assert SieveOfEratosthenes.get_chunked_list(10, 3) |> Enum.to_list == [[2,3,4],[5,6,7],[8,9,10]]
   end
 
 end
