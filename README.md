@@ -17,7 +17,7 @@ by adding `sieve_of_eratosthenes` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:sieve_of_eratosthenes, "~> 0.1.0"}
+    {:sieve_of_eratosthenes, "~> 0.2.0"}
   ]
 end
 ```
