@@ -4,7 +4,7 @@ defmodule SieveOfEratosthenes.MixProject do
   def project do
     [
       app: :sieve_of_eratosthenes,
-      version: "0.2.0",
+      version: "0.3.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -34,7 +34,7 @@ defmodule SieveOfEratosthenes.MixProject do
   end
 
   def description() do
-    "Implementation of sieve of eratosthenes to calculate all the prime numbers, using tail recursive optimization and async functions."
+    "Implementation of sieve of eratosthenes to calculate all the prime numbers, using :atomics for O(1) access and concurrent marking."
   end
 
   def package() do
@@ -43,7 +43,7 @@ defmodule SieveOfEratosthenes.MixProject do
       files: ["lib", "mix.exs", "README.md", "LICENSE", "CHANGELOG.md"],
       maintainers: ["José Juan García Rojas"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/Freakisimo/sieve_of_eratosthenes"}
+      links: %{"GitHub" => "https://github.com/Dante7/sieve_of_eratosthenes"}
     ]
   end
 
