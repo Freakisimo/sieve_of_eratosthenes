@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.0 (2025-02-19)
+
+  * Enhancements
+    * Rewrite sieve implementation using :atomics for O(1) access, replacing list-based approach
+    * Add concurrent marking of composite numbers using Task.async (lock-free writes)
+    * Add input validation with guard clauses and typespecs
+    * Add edge case tests (input 0, 1, 2, 3)
+    * Enable 100M benchmark (previously commented out)
+    * Fix inconsistent GitHub URL in package config
+
 ## v0.2.0 (2023-08-17)
 
   * Enhancements

@@ -1,13 +1,12 @@
 # Sieve of Eratosthenes
 
-Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers until number given used as limit, using tail recursive optimization and async functions.
+Implementation of sieve of eratosthenes algorithm to calculate all the prime numbers until number given used as limit, using `:atomics` for O(1) access and concurrent marking.
 
 How it works is:
-* Create a list of numbers between two and the input parameter like this `[2..input]`
-* Get the square root to chunk the list generated
-* Calculate all the primes of the first list
-* Remove al composite numbers of the remaining lists
-* Return all the prime numbers not filtered by the prime numbers and the firs list of prime numbers
+* Create an `:atomics` array of size `input + 1` where index = number (0 = prime, 1 = composite)
+* Find small primes up to `√input` sequentially
+* Mark all multiples of each small prime concurrently using `Task.async` (lock-free writes)
+* Collect all indices still marked as prime
 
 ## Installation
 
@@ -17,7 +16,7 @@ by adding `sieve_of_eratosthenes` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:sieve_of_eratosthenes, "~> 0.2.0"}
+    {:sieve_of_eratosthenes, "~> 0.3.0"}
   ]
 end
 ```
@@ -31,22 +30,27 @@ iex> SieveOfEratosthenes.calculate_primes(1_000)
  163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, ...]
 ```
 
-## Benchmark for v0.2.0
-The benchmark was generated with Benchee shown the following results:
+## Benchmarks
+To run the benchmarks, just run `mix run benchmarks/calculate_primes.ex` and see the results on `benchmarks/results/index.html`
+
+### v0.3.0 (:atomics)
+Rewritten using `:atomics` for O(1) access with concurrent marking. Enables 100M+ calculation.
+![table](benchmarks/0.3.0/table.png)
+
+![chart](benchmarks/0.3.0/chart.png)
+
+### v0.2.0 (Streams + Tasks)
 ![table](benchmarks/0.2.0/table.png)
 
 ![chart](benchmarks/0.2.0/chart.png)
 
-## Benchmark for v0.1.1
-The benchmark was generated with Benchee shown the following results:
+### v0.1.1
 ![table](benchmarks/0.1.1/table.png)
 
 ![chart](benchmarks/0.1.1/chart.png)
 
-To run the benchmarks again, just run `mix run benchmarks/calculate_primes.ex` and see the results on `benchmarks/results/index.html`
-
 ## Maintainer
-This proyect was developed by [José Juan García](https://github.com/Freakisimo) in my track to become a elixir developer
+This project was developed by [José Juan García](https://github.com/Freakisimo) in my track to become a elixir developer
 
 ## Contributing
 Feel free to recommend any change in favor of improving this project
